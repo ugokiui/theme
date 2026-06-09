@@ -12,7 +12,7 @@
 
   <header>
     <a href="<?php echo esc_url(home_url('/')); ?>">
-      <img src="/wp-content/uploads/2026/05/logo.svg" class="logo" alt="<?php bloginfo('name'); ?>" />
+      <img src="/wp-content/uploads/2026/05/logo.svg" class="logo" alt="<?php bloginfo('name'); ?>" width="120" height="42" decoding="async" />
     </a>
     <div class="d-none d-lg-block">
       <div class="menu">
@@ -26,31 +26,31 @@
       <div class="cta-header">
         <a href="#" class="bt-s-auto g-1">
           Donate
-          <img src="/wp-content/uploads/2026/05/thumb.svg" alt="" />
+          <img src="/wp-content/uploads/2026/05/thumb.svg" alt="" width="16" height="16" decoding="async" />
         </a>
         <a href="https://discord.gg/xQjXxdN3" target="_blank" rel="noopener noreferrer" class="bt-icon">
-          <img src="/wp-content/uploads/2026/05/discod.svg" alt="Discord" />
+          <img src="/wp-content/uploads/2026/05/discod.svg" alt="Discord" width="24" height="24" decoding="async" />
         </a>
         <a href="https://github.com/ugokiui/ugokiui-files.git" target="_blank" rel="noopener noreferrer" class="bt-icon">
-          <img src="/wp-content/uploads/2026/05/github.svg" alt="GitHub" />
+          <img src="/wp-content/uploads/2026/05/github.svg" alt="GitHub" width="24" height="24" decoding="async" />
         </a>
         <a href="https://figma.com/@ugokiui" target="_blank" rel="noopener noreferrer" class="bt-icon">
-          <img src="/wp-content/uploads/2026/05/figma.svg" alt="Figma" />
+          <img src="/wp-content/uploads/2026/05/figma.svg" alt="Figma" width="24" height="24" decoding="async" />
         </a>
       </div>
     </div>
     <div class="d-lg-none">
-      <a href="#" class="bt-icon" onclick="openMenuModal()">
-        <i class="ti ti-menu-3"></i>
+      <a href="#" class="bt-icon" data-open-menu>
+        <?php echo ugoki_icon('menu-3'); ?>
       </a>
     </div>
   </header>
 
   <!-- offcanvas -->
-  <div class="offcanvas-backdrop" id="menu-backdrop" onclick="closeMenuModal()"></div>
+  <div class="offcanvas-backdrop" id="menu-backdrop" data-close-menu></div>
   <div class="offcanvas" id="menu-modal-box">
     <div class="offcanvas-header">
-      <button class="close-btn" onclick="closeMenuModal()">✕</button>
+      <button type="button" class="close-btn" data-close-menu>✕</button>
     </div>
 
     <nav class="offcanvas-menu">
@@ -66,13 +66,13 @@
       </div>
       <div class="cta-header d-flex g-2">
         <a href="https://discord.gg/xQjXxdN3" target="_blank" rel="noopener noreferrer" class="bt-icon">
-          <img src="/wp-content/uploads/2026/05/discod.svg" alt="Discord" />
+          <img src="/wp-content/uploads/2026/05/discod.svg" alt="Discord" width="24" height="24" decoding="async" />
         </a>
         <a href="https://github.com/ugokiui/ugokiui-files.git" target="_blank" rel="noopener noreferrer" class="bt-icon">
-          <img src="/wp-content/uploads/2026/05/github.svg" alt="GitHub" />
+          <img src="/wp-content/uploads/2026/05/github.svg" alt="GitHub" width="24" height="24" decoding="async" />
         </a>
         <a href="https://figma.com/@ugokiui" target="_blank" rel="noopener noreferrer" class="bt-icon">
-          <img src="/wp-content/uploads/2026/05/figma.svg" alt="Figma" />
+          <img src="/wp-content/uploads/2026/05/figma.svg" alt="Figma" width="24" height="24" decoding="async" />
         </a>
       </div>
     </nav>

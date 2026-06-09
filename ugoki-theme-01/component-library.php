@@ -98,8 +98,12 @@
     <?php endif; ?>
 
                 <?php if (has_post_thumbnail()) : ?>
-                  <?php the_post_thumbnail('full', [
-                    'alt' => get_the_title()
+                  <?php the_post_thumbnail('component-card', [
+                    'alt'      => get_the_title(),
+                    'loading'  => 'lazy',
+                    'decoding' => 'async',
+                    'width'    => 380,
+                    'height'   => 480,
                   ]); ?>
                 <?php endif; ?>
 

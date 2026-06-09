@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../../fonts/rubik-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Funnel Display';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url('../../fonts/funnel-display-latin.woff2') format('woff2');
+}

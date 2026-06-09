@@ -7,11 +7,11 @@
 <canvas id="dotGrid"></canvas>
 <!-- end -->
 
-<div class="offcanvas-backdrop" id="form-backdrop" onclick="closeFormModal()"></div>
+<div class="offcanvas-backdrop" id="form-backdrop" data-close-form></div>
 
 <div class="offcanvas" id="form-modal-box">
   <div class="offcanvas-header">
-    <button class="close-btn" onclick="closeFormModal()">✕</button>
+    <button type="button" class="close-btn" data-close-form>✕</button>
   </div>
 
   <div class="container">
@@ -47,15 +47,27 @@
             <img
               class="avatar"
               src="/wp-content/uploads/2026/05/1697547752614.jpeg"
-              alt="" />
+              alt=""
+              width="52"
+              height="52"
+              loading="lazy"
+              decoding="async" />
             <img
               class="avatar"
               src="/wp-content/uploads/2026/05/Portrait-of-a-Man.png"
-              alt="" />
+              alt=""
+              width="52"
+              height="52"
+              loading="lazy"
+              decoding="async" />
             <img
               class="avatar"
               src="/wp-content/uploads/2026/05/1718212203141.jpeg"
-              alt="" />
+              alt=""
+              width="52"
+              height="52"
+              loading="lazy"
+              decoding="async" />
        
           </div>
           <div class="review-content">
@@ -90,16 +102,16 @@
 
         <div
           class="d-flex mt-16 justify-content-center justify-content-lg-start">
-          <a href="/component-library/" class="btn-primary">Browse Animations<i class="ti ti-layout-grid"></i></a>
+          <a href="/component-library/" class="btn-primary">Browse Animations<?php echo ugoki_icon('layout-grid'); ?></a>
         </div>
       </div>
       <div class="col-lg-6 d-none d-lg-block">
         <div class="d-flex justify-content-end position-relative">
           <div class="overflow-top">
-            <img class="floating-frame" src="/wp-content/uploads/2026/05/frame.svg" alt="" />
+            <img class="floating-frame" src="/wp-content/uploads/2026/05/frame.svg" alt="" width="500" height="500" loading="lazy" decoding="async" />
           </div>
           <div class="box-anima">
-            <img src="/wp-content/uploads/2026/05/animation.gif" class="hero-img" alt="" />
+            <?php echo ugoki_hero_animation(); ?>
           </div>
         </div>
       </div>
@@ -112,7 +124,7 @@
     <div
       class="d-flex justify-content-between mb-48 flex-column flex-lg-row align-items-center g-4 text-center text-lg-start">
       <h3 class="text-white">Featured / Trending Components</h3>
-      <a href="#" class="text-white opacity-50 d-flex align-items-center">View all&nbsp;<i class="ti ti-arrow-up-right"></i></a>
+      <a href="#" class="text-white opacity-50 d-flex align-items-center">View all&nbsp;<?php echo ugoki_icon('arrow-up-right'); ?></a>
     </div>
   </div>
   <div
@@ -145,65 +157,9 @@
             animation: infiniteScroll 25s linear infinite;
           ">
       <?php
-      $args = array(
-        'post_type'      => 'animated_component',
-        'posts_per_page' => -1,
-        'post_status'    => 'publish',
-      );
-
-      $query = new WP_Query($args);
-
-      if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post();
-
-          $terms = get_the_terms(get_the_ID(), 'component_category');
-          $term_classes = '';
-
-          if ($terms && !is_wp_error($terms)) {
-            foreach ($terms as $term) {
-              $term_classes .= ' cat-' . $term->slug;
-            }
-          }
-      ?>
-          <div class="box-image">
-            <?php if (has_post_thumbnail()) : ?>
-              <?php the_post_thumbnail('full', [
-                'alt' => get_the_title()
-              ]); ?>
-            <?php endif; ?>
-          </div>
-          <!-- <img
-        class="slider-card-img"
-        src="/wp-content/uploads/2026/05/animation.gif"
-        alt="User Research Accordion" />
-      <img
-        class="slider-card-img"
-        src="/wp-content/uploads/2026/05/animation.gif"
-        alt="Email Notification Component" />
-      <img
-        class="slider-card-img"
-        src="/wp-content/uploads/2026/05/animation.gif"
-        alt="AI Hexagon Generator" />
-      <img
-        class="slider-card-img"
-        src="/wp-content/uploads/2026/05/animation.gif"
-        alt="Camping Component Copy" />
-      <img
-        class="slider-card-img"
-        src="/wp-content/uploads/2026/05/animation.gif"
-        alt="User Research Accordion Copy" />
-      <img
-        class="slider-card-img"
-        src="/wp-content/uploads/2026/05/animation.gif"
-        alt="Email Notification Component Copy" />
-      <img
-        class="slider-card-img"
-        src="/wp-content/uploads/2026/05/animation.gif"
-        alt="AI Hexagon Generator Copy" /> -->
-      <?php
-        endwhile;
-        wp_reset_postdata();
-      endif;
+      $slider_items = ugoki_render_slider_items(10);
+      echo $slider_items;
+      echo $slider_items;
       ?>
     </div>
   </div>
@@ -225,7 +181,7 @@
       <div class="box-category">Cards & Layouts</div>
     </div>
     <div class="d-flex mt-16 justify-content-center mt-48">
-      <a href="#" class="btn-primary">Explore All Categories<i class="ti ti-layout-grid"></i></a>
+      <a href="#" class="btn-primary">Explore All Categories<?php echo ugoki_icon('layout-grid'); ?></a>
     </div>
   </div>
 </section>
@@ -285,7 +241,7 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <img src="/wp-content/uploads/2026/06/how-it-works-ugokiui.webp">
+          <img src="/wp-content/uploads/2026/06/how-it-works-ugokiui.webp" alt="How Ugoki UI works" width="600" height="400" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -296,7 +252,7 @@
     <div class="container">
 
         <div class="text-center d-flex justify-content-center mb-24">
-            <img src="/wp-content/uploads/2026/05/recent.svg" alt="New Releases" />
+            <img src="/wp-content/uploads/2026/05/recent.svg" alt="New Releases" width="48" height="48" loading="lazy" decoding="async" />
         </div>
 
         <h3 class="text-dark text-center mb-48">New Releases</h3>
@@ -324,8 +280,12 @@
 
                     <div class="new-relese">
                         <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('full', array(
-                                'alt' => get_the_title()
+                            <?php the_post_thumbnail('component-card', array(
+                                'alt'      => get_the_title(),
+                                'loading'  => 'lazy',
+                                'decoding' => 'async',
+                                'width'    => 380,
+                                'height'   => 480,
                             )); ?>
                         <?php endif; ?>
                     </div>
@@ -349,7 +309,7 @@
                     <div class="d-flex justify-content-center mt-48">
                         <a href="<?php the_permalink(); ?>" class="btn-primary">
                             Get This Component
-                            <i class="ti ti-arrow-up-right"></i>
+                            <?php echo ugoki_icon('arrow-up-right'); ?>
                         </a>
                     </div>
 
@@ -404,7 +364,7 @@
 
               <div class="review-user">
                 <?php if ($avatar): ?>
-                  <img src="<?php echo esc_url($avatar); ?>" alt="<?php the_title(); ?>" class="reviewer-avatar">
+                  <img src="<?php echo esc_url($avatar); ?>" alt="<?php the_title(); ?>" class="reviewer-avatar" width="48" height="48" loading="lazy" decoding="async">
                 <?php endif; ?>
                 <div class="reviewer-meta">
                   <h4><?php the_title(); ?></h4>
@@ -420,7 +380,7 @@
       </div>
       <div
         class="d-flex mt-16 justify-content-center mt-48 text-center w-100">
-        <a class="btn-primary" onclick="openFormModal()">Tell Us What You Think<i class="ti ti-arrow-up-right"></i></a>
+        <a href="#" class="btn-primary" data-open-form>Tell Us What You Think<?php echo ugoki_icon('arrow-up-right'); ?></a>
       </div>
     </section>
   </div>

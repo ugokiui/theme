@@ -24,7 +24,7 @@
         </p>
       </div>
       <div class="col-lg-6">
-        <img src="/wp-content/uploads/2026/05/abt.webp" class="rounded" alt="" />
+        <img src="/wp-content/uploads/2026/05/abt.webp" class="rounded" alt="Ugoki UI design library" width="600" height="400" loading="lazy" decoding="async" />
       </div>
     </div>
     <div class="box-what mt-48 p-24 p-lg-48">
