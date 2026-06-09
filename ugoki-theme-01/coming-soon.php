@@ -9,13 +9,7 @@
 	
 	   
 	   <div class="circle">
-		   <?php echo ugoki_hero_animation(array(
-         'variant' => 'ani',
-         'class'   => '',
-         'width'   => 200,
-         'height'  => 200,
-         'alt'     => 'Ugoki UI animation',
-       )); ?>
+		   <img src="https://ugokiui.com/wp-content/uploads/2026/05/ani.gif">
 	   </div>
 
     <div class="title">

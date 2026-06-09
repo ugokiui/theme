@@ -10,11 +10,17 @@
 	
 	   
 	   <div class="circle">
-		   <img src="https://ugokiui.com/wp-content/uploads/2026/05/ani.gif">
+		   <?php echo ugoki_hero_animation(array(
+         'variant' => 'ani',
+         'class'   => '',
+         'width'   => 200,
+         'height'  => 200,
+         'alt'     => 'Ugoki UI animation',
+       )); ?>
 	   </div>
 
     <div class="title">
-      <img src="/wp-content/uploads/2026/05/logo.svg" alt="">
+      <img src="/wp-content/uploads/2026/05/logo.svg" alt="<?php bloginfo('name'); ?>" width="200" height="60" decoding="async">
     </div>
 
     <div class="subtitle title-small">

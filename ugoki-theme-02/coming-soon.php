@@ -2,7 +2,6 @@
 /* Template Name: coming-soon */
 ?>
 
-<?php get_header(); ?>
 
 <!-- Your HTML content here -->
 <canvas id="dotGrid"></canvas>
@@ -10,7 +9,13 @@
 	
 	   
 	   <div class="circle">
-		   <img src="https://ugokiui.com/wp-content/uploads/2026/05/ani.gif">
+		   <?php echo ugoki_hero_animation(array(
+         'variant' => 'ani',
+         'class'   => '',
+         'width'   => 200,
+         'height'  => 200,
+         'alt'     => 'Ugoki UI animation',
+       )); ?>
 	   </div>
 
     <div class="title">
@@ -30,4 +35,3 @@
 
   </div>
 
-<?php get_footer(); ?>

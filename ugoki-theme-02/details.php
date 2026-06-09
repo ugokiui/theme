@@ -14,7 +14,7 @@
                   <i></i>
                   New
                 </div>
-                <img src="/wp-content/uploads/2026/05/animation.gif" alt="" />
+                <?php echo ugoki_hero_animation(array('priority' => 'low', 'alt' => 'Animated component preview')); ?>
               </a>
             </div>
             <div class="col-lg-6 mb-24">
